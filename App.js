@@ -1,9 +1,23 @@
 const express = require("express");
 const app = express();
+const { dockStart } = require('@nlpjs/basic');
 app.use(express.json());
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+(async () => {
+  const dock = await dockStart({ use: ['Basic']});
+  const nlp = dock.get('nlp');
+  await nlp.addCorpus('./corpus-en.json');
+  await nlp.train();
+   app.post('/bot',async (req,res)=>{
+    const {message}=req.body
+        let response = await nlp.process('en',req.body.message);
+         res.send({data:response.answer});
+         console.log(req.body.message)
+         console.log(response.answer);
+    }) ;
+})();
 const mongoUrl =
   "mongodb+srv://piyushagarwal582:Piyush4107@cluster1.a9s6cny.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1";
 const JWT_SECRET =
