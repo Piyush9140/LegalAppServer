@@ -79,7 +79,9 @@ app.post("/login-user", async (req, res) => {
   if (!oldUser) {
     return res.send({ status: "null", data: "User doesn't exists!!" });
   }
-
+   if(! await bcrypt.compare(password, oldUser.password)){
+    return res.send({ status: "Wrongpass", data: "doesn't exists!!" });
+  }
   if (await bcrypt.compare(password, oldUser.password)) {
     const token = jwt.sign({ email: oldUser.email }, JWT_SECRET);
     console.log(token);
@@ -100,6 +102,9 @@ app.post("/login-Lawyer", async (req, res) => {
 
   if (!oldUser) {
     return res.send({ status: "null", data: "User doesn't exists!!" });
+  }
+  if(! await bcrypt.compare(password, oldUser.password)){
+    return res.send({ status: "Wrongpass", data: "doesn't exists!!" });
   }
 
   if (await bcrypt.compare(password, oldUser.password)) {
