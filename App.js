@@ -41,6 +41,11 @@ app.post("/register-user", async (req, res) => {
 
   const oldUser = await User.findOne({ email: email });
 
+  const phoneRegex = /^\d{10}$/;
+  if (! phoneRegex.test(Number)) {
+    return res.send({ status: "Wrong Number", data: "Enter New User Detail" });
+  }
+  
   if (oldUser) {
     return res.send({ status: "UserExists", data: "User already exists!!" });
   }
@@ -89,7 +94,7 @@ app.post("/login-user", async (req, res) => {
   const { email, password } = req.body;
   console.log(req.body);
   const oldUser = await User.findOne({ email: email });
-
+  
   if (!oldUser) {
     return res.send({ status: "null", data: "User doesn't exists!!" });
   }

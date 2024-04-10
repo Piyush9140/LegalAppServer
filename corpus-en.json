@@ -728,6 +728,32 @@
         "I feel like I can't speak my mind freely. There are too many things I can't say without getting in trouble. I believe everyone should be able to say what they think without fear of punishment."
       ],
       "answers": ["Right to Freedom"]
+    },
+    {
+      "intent": "user.criminallawyer",
+      "utterances": [
+        " Theft, Robbery, Extortion, Dacoity, Burglary, and Fraud, Assault",
+        "Criminal Law will deal with serious crimes such as murder,murdered,raped,stolen, rapes, arson, robbery, assault etc.",
+        "Drug Offenses,ossession, distribution, trafficking, manufacturing, and cultivation of illegal substances.",
+        "theft, burglary, robbery, shoplifting, embezzlement, fraud, identity theft, and other property-related offenses.",
+        "rape, sexual assault, sexual abuse, child molestation, possession or distribution of child pornography, and sexual misconduct.",
+        "white-collar crimes, including fraud, embezzlement, money laundering, insider trading, tax evasion, and other financial crimes.",
+        " murder, manslaughter, or other homicide offenses, which can range from first-degree murder to involuntary manslaughter.",
+        "reckless driving, hit-and-run accidents, driving with a suspended or revoked license, and other traffic-related infractions."
+      ],
+      "answers": ["You should consult to criminal lawyer"]
+    },
+    {
+      "intent": "user.buisnesslawyer",
+      "utterances": [
+        " Business Formation and Structure: Business lawyers assist clients with selecting the appropriate legal structure for their business, such as sole proprietorship, partnership, corporation, or limited liability company (LLC). They help with the formation and registration of businesses and draft the necessary legal documents, such as articles of incorporation or organization and operating agreements.",
+        "Contracts and Agreements: Business lawyers draft, review, and negotiate various types of contracts and agreements on behalf of their clients, including purchase agreements, sales contracts, employment contracts, non-disclosure agreements (NDAs), licensing agreements, partnership agreements, and franchise agreements.",
+        "Corporate Governance: Business lawyers provide guidance on corporate governance matters, including board of directors' responsibilities, shareholder rights, corporate compliance, regulatory filings, annual meetings, and corporate resolutions. They help ensure that businesses operate in compliance with applicable laws and regulations.",
+        "Intellectual Property (IP) Protection: Business lawyers assist clients with protecting their intellectual property rights, including trademarks, copyrights, patents, and trade secrets. They help with IP registration, enforcement, licensing, and infringement litigation.",
+        "Real Estate Transactions: Business lawyers handle real estate transactions and matters related to commercial property, including purchase and sale agreements, leases, property development, zoning and land use regulations, environmental compliance, and property disputes.",
+        "Taxation: Business lawyers provide advice on taxation issues, including corporate taxation, tax planning, tax compliance, tax incentives, tax credits, and tax controversies. They help clients minimize tax liabilities and ensure compliance with tax laws."
+      ],
+      "answers": ["You should consult to criminal lawyer"]
     }
   ]
 }
