@@ -114,6 +114,13 @@ app.post("/login-user", async (req, res) => {
     }
   }
 });
+app.post("/Category-Lawyer", async (req, res) => {
+  const { Category } = req.body;
+  console.log(req.body);
+  const user = await Lawyer.find({ LawyerCat: Category });
+  console.log(user)
+  return res.send({status:"ok",data:user})
+});
 app.post("/login-Lawyer", async (req, res) => {
   const { email, password } = req.body;
   console.log(req.body);
