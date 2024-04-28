@@ -238,6 +238,41 @@ app.post("/friend-request/accept", async (req, res) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 });
+app.get("/accepted-friends-Lawyer/:userId", async (req, res) => {
+  try {
+    const { userId } = req.params;
+    console.log(userId)
+    const Lawyer1 = await Lawyer.findById(userId).populate(
+      {
+        path: 'friends',
+        model: 'UserInfo', // The model to populate from
+        select: 'name email' // Select specific fields from UserInfo
+      }
+    );
+    const acceptedFriends = Lawyer1.friends;
+    res.json(acceptedFriends);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+app.get("/accepted-friends-User/:userId", async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const user = await User.findById(userId).populate(
+      {
+        path: 'friends',
+        model: 'LawyerInfo', // The model to populate from
+        select: 'name email' // Select specific fields from UserInfo
+      }
+    );
+    const acceptedFriends = user.friends;
+    res.json(acceptedFriends);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 app.get("/", (req, res) => {
   res.send({ status: "Started" });
 });
