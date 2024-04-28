@@ -8,8 +8,25 @@ const LawyerDetailSchema = new mongoose.Schema(
     location:String,
     Number: String,
     LawyerCat:String,
-    LawyerID:String
-  
+    LawyerID:String,
+    freindRequests: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "LawyerInfo",
+      },
+    ],
+    friends: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "LawyerInfo",
+      },
+    ],
+    sentFriendRequests: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "LawyerInfo",
+      },
+    ],
   },
   {
     collection: "LawyerInfo",

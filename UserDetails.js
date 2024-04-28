@@ -7,7 +7,24 @@ const UserDetailSchema = new mongoose.Schema(
     password: String,
     location:String,
     Number: String,
-  
+    freindRequests: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "UserInfo",
+      },
+    ],
+    friends: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "UserInfo",
+      },
+    ],
+    sentFriendRequests: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "UserInfo",
+      },
+    ],
   },
   {
     collection: "UserInfo",

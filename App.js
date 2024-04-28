@@ -34,7 +34,7 @@ require("./UserDetails");
 const User = mongoose.model("UserInfo");
 require("./LawyerDetails");
 const Lawyer = mongoose.model("LawyerInfo");
-
+const Message= require('./message');
 app.post("/register-user", async (req, res) => {
   const { name, email, Password, Location, Number } = req.body;
   console.log(req.body);
